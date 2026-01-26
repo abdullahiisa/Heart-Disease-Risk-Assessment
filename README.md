@@ -24,3 +24,11 @@ The system uses a trained machine learning model exported to **ONNX format**, a 
 - Served via backend API
 
 ---
+
+## How to run the code
+
+```
+cd Heart-Disease-Risk-Assessment
+chmod +x run.sh
+./run.sh
+```

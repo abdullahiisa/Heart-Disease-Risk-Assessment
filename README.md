@@ -60,4 +60,4 @@ To run the application, follow these steps in your terminal:
 The application will be accessible at the following address(es) once running:
 
 *   **Frontend:** `http://localhost:3000`
-*   **API:** `http://localhost:8000`
+*   **Backend:** `http://localhost:8000`

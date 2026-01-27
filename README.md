@@ -5,7 +5,7 @@ The system uses a trained machine learning model exported to **ONNX format**, a 
 
 ---
 
-## 🚀 Features
+## Features
 
 - User-friendly clinical data input form
 - Machine Learning inference using ONNX Runtime
@@ -16,7 +16,7 @@ The system uses a trained machine learning model exported to **ONNX format**, a 
 
 ---
 
-## 🧠 Machine Learning Model
+## Machine Learning Model
 
 - Trained using scikit-learn ( MLP)
 - Preprocessing includes scaling and encoding
@@ -25,10 +25,22 @@ The system uses a trained machine learning model exported to **ONNX format**, a 
 
 ---
 
-## How to run the code
+---
 
-```
+## Prerequisites
+
+Ensure the following are installed:
+
+- Python **3.9+**
+- Node.js **18+**
+- npm or yarn
+- pip
+- Git
+
+## How to Run the Code
+
+```bash
 cd Heart-Disease-Risk-Assessment
 chmod +x run.sh
 ./run.sh
-```
+

@@ -25,8 +25,6 @@ The system uses a trained machine learning model exported to **ONNX format**, a 
 
 ---
 
----
-
 ## Prerequisites
 
 Ensure the following are installed:

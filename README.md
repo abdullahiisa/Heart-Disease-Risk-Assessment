@@ -35,6 +35,8 @@ Ensure the following are installed:
 - pip
 - Git
 
+---
+
 ## How to Run the Code
 
 ```bash

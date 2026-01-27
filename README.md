@@ -39,8 +39,25 @@ Ensure the following are installed:
 
 ## How to Run the Code
 
-```bash
-cd Heart-Disease-Risk-Assessment
-chmod +x run.sh
-./run.sh
+To run the application, follow these steps in your terminal:
 
+1.  **Navigate** to the project directory:
+    ```bash
+    cd Heart-Disease-Risk-Assessment
+    ```
+
+2.  **Make the script executable**:
+    ```bash
+    chmod +x run.sh
+    ```
+
+3.  **Execute** the script to start the application:
+    ```bash
+    ./run.sh
+    ```
+## Ports
+
+The application will be accessible at the following address(es) once running:
+
+*   **Frontend:** `http://localhost:3000`
+*   **API:** `http://localhost:8000`

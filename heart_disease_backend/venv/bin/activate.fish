@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/abdullahiisa/github/Heart-Disease-Risk-Assesment/heart_disease_backend/venv
+set -gx VIRTUAL_ENV /home/abdullahiisa/github/Heart-Disease-Risk-Assessment/heart_disease_backend/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

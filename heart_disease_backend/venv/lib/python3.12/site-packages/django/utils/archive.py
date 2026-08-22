@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
+
 import os
 import shutil
 import stat
@@ -100,7 +101,7 @@ class Archive:
 
 class BaseArchive:
     """
-    Base Archive class.  Implementations should inherit this class.
+    Base Archive class. Implementations should inherit this class.
     """
 
     @staticmethod

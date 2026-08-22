@@ -3,11 +3,13 @@ import itertools
 from django.apps import apps
 from django.contrib.contenttypes.models import ContentType
 from django.core.management import BaseCommand
-from django.db import DEFAULT_DB_ALIAS, router
+from django.db import DEFAULT_DB_ALIAS, connections, router
 from django.db.models.deletion import Collector
 
 
 class Command(BaseCommand):
+    help = "Deletes stale content types in the database."
+
     def add_arguments(self, parser):
         parser.add_argument(
             "--noinput",
@@ -19,6 +21,7 @@ class Command(BaseCommand):
         parser.add_argument(
             "--database",
             default=DEFAULT_DB_ALIAS,
+            choices=tuple(connections),
             help='Nominates the database to use. Defaults to the "default" database.',
         )
         parser.add_argument(
@@ -58,7 +61,9 @@ class Command(BaseCommand):
                         ct_info.append(
                             "    - Content type for %s.%s" % (ct.app_label, ct.model)
                         )
-                        collector = NoFastDeleteCollector(using=using, origin=ct)
+                        collector = Collector(
+                            using=using, origin=ct, force_collection=True
+                        )
                         collector.collect([ct])
 
                         for obj_type, objs in collector.data.items():
@@ -80,7 +85,7 @@ class Command(BaseCommand):
                         "are:\n\n"
                         f"{content_type_display}\n\n"
                         "This list doesn't include any cascade deletions to data "
-                        "outside of Django's\n"
+                        "outside of Django\n"
                         "models (uncommon).\n\n"
                         "Are you sure you want to delete these content types?\n"
                         "If you're unsure, answer 'no'."
@@ -100,11 +105,3 @@ class Command(BaseCommand):
                 else:
                     if verbosity >= 2:
                         self.stdout.write("Stale content types remain.")
-
-
-class NoFastDeleteCollector(Collector):
-    def can_fast_delete(self, *args, **kwargs):
-        """
-        Always load related objects to display them when showing confirmation.
-        """
-        return False

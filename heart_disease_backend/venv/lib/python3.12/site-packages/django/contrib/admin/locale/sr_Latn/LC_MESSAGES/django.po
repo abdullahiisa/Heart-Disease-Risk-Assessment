@@ -1,24 +1,29 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Igor Jerosimić, 2019
+# Aco Jugo, 2024
+# Igor Jerosimić, 2019,2024-2026
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Janos Guljas <janos@resenje.org>, 2011-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-16 20:42+0100\n"
-"PO-Revision-Date: 2019-06-27 12:37+0000\n"
-"Last-Translator: Igor Jerosimić\n"
-"Language-Team: Serbian (Latin) (http://www.transifex.com/django/django/"
+"POT-Creation-Date: 2026-07-22 16:14-0400\n"
+"PO-Revision-Date: 2026-08-05 07:05+0000\n"
+"Last-Translator: Igor Jerosimić, 2019,2024-2026\n"
+"Language-Team: Serbian (Latin) (http://app.transifex.com/django/django/"
 "language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sr@latin\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#, python-format
+msgid "Delete selected %(verbose_name_plural)s"
+msgstr "Briši označene objekte klase %(verbose_name_plural)s"
 
 #, python-format
 msgid "Successfully deleted %(count)d %(items)s."
@@ -26,14 +31,10 @@ msgstr "Uspešno obrisano: %(count)d %(items)s."
 
 #, python-format
 msgid "Cannot delete %(name)s"
-msgstr "Nesuspelo brisanje %(name)s"
+msgstr "Neuspelo brisanje %(name)s"
 
-msgid "Are you sure?"
-msgstr "Da li ste sigurni?"
-
-#, python-format
-msgid "Delete selected %(verbose_name_plural)s"
-msgstr "Briši označene objekte klase %(verbose_name_plural)s"
+msgid "Delete multiple objects"
+msgstr "Brisanje više objekata"
 
 msgid "Administration"
 msgstr "Administracija"
@@ -70,6 +71,12 @@ msgstr "Nema datuma"
 
 msgid "Has date"
 msgstr "Ima datum"
+
+msgid "Empty"
+msgstr "Prazno"
+
+msgid "Not empty"
+msgstr "Nije prazno"
 
 #, python-format
 msgid ""
@@ -128,22 +135,22 @@ msgid "log entries"
 msgstr "zapisi u logovima"
 
 #, python-format
-msgid "Added \"%(object)s\"."
+msgid "Added “%(object)s”."
 msgstr "Dodat objekat klase „%(object)s“."
 
 #, python-format
-msgid "Changed \"%(object)s\" - %(changes)s"
+msgid "Changed “%(object)s” — %(changes)s"
 msgstr "Promenjen objekat klase „%(object)s“ - %(changes)s"
 
 #, python-format
-msgid "Deleted \"%(object)s.\""
+msgid "Deleted “%(object)s.”"
 msgstr "Uklonjen objekat klase „%(object)s“."
 
 msgid "LogEntry Object"
 msgstr "Objekat unosa loga"
 
 #, python-brace-format
-msgid "Added {name} \"{object}\"."
+msgid "Added {name} “{object}”."
 msgstr "Dodat objekat {name} \"{object}\"."
 
 msgid "Added."
@@ -153,7 +160,7 @@ msgid "and"
 msgstr "i"
 
 #, python-brace-format
-msgid "Changed {fields} for {name} \"{object}\"."
+msgid "Changed {fields} for {name} “{object}”."
 msgstr "Izmenjena polja {fields} za {name} \"{object}\"."
 
 #, python-brace-format
@@ -161,7 +168,7 @@ msgid "Changed {fields}."
 msgstr "Izmenjena polja {fields}."
 
 #, python-brace-format
-msgid "Deleted {name} \"{object}\"."
+msgid "Deleted {name} “{object}”."
 msgstr "Obrisan objekat {name} \"{object}\"."
 
 msgid "No fields changed."
@@ -170,42 +177,49 @@ msgstr "Bez izmena u poljima."
 msgid "None"
 msgstr "Ništa"
 
-msgid ""
-"Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
+msgid "Hold down “Control”, or “Command” on a Mac, to select more than one."
 msgstr ""
+"Držite „Control“, ili „Command“ na Mac-u da biste obeležili više od jedne "
+"stavke."
 
 #, python-brace-format
-msgid "The {name} \"{obj}\" was added successfully."
-msgstr ""
+msgid "Select this object for an action - {}"
+msgstr "Izaberi ovaj objekat za radnju - {}"
+
+#, python-format
+msgid "The app \"%s\" could not be found."
+msgstr "Aplikacija \"%s\" nije pronađena."
+
+#, python-brace-format
+msgid "The {name} “{obj}” was added successfully."
+msgstr "Objekat {name} \"{obj}\" uspešno dodat."
 
 msgid "You may edit it again below."
-msgstr ""
+msgstr "Možete ga izmeniti opet ispod"
 
 #, python-brace-format
 msgid ""
-"The {name} \"{obj}\" was added successfully. You may add another {name} "
+"The {name} “{obj}” was added successfully. You may add another {name} below."
+msgstr ""
+"Objekat {name} \"{obj}\" uspešno dodat. Možete dodati još jedan {name} ispod."
+
+#, python-brace-format
+msgid ""
+"The {name} “{obj}” was changed successfully. You may edit it again below."
+msgstr ""
+"Objekat {name} \"{obj}\" uspešno izmenjen. Možete ga opet izmeniti ispod."
+
+#, python-brace-format
+msgid ""
+"The {name} “{obj}” was changed successfully. You may add another {name} "
 "below."
 msgstr ""
+"Objekat {name} \"{obj}\" uspešno izmenjen. Možete dodati još jedan {name} "
+"ispod."
 
 #, python-brace-format
-msgid ""
-"The {name} \"{obj}\" was changed successfully. You may edit it again below."
-msgstr ""
-
-#, python-brace-format
-msgid ""
-"The {name} \"{obj}\" was added successfully. You may edit it again below."
-msgstr ""
-
-#, python-brace-format
-msgid ""
-"The {name} \"{obj}\" was changed successfully. You may add another {name} "
-"below."
-msgstr ""
-
-#, python-brace-format
-msgid "The {name} \"{obj}\" was changed successfully."
-msgstr ""
+msgid "The {name} “{obj}” was changed successfully."
+msgstr "Objekat {name} \"{obj}\" uspešno izmenjen."
 
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
@@ -218,12 +232,12 @@ msgid "No action selected."
 msgstr "Nije izabrana nijedna akcija."
 
 #, python-format
-msgid "The %(name)s \"%(obj)s\" was deleted successfully."
-msgstr "Objekat „%(obj)s“ klase %(name)s uspešno je obrisan."
+msgid "The %(name)s “%(obj)s” was deleted successfully."
+msgstr "Objekat „%(obj)s“ klase %(name)s je uspešno obrisan."
 
 #, python-format
-msgid "%(name)s with ID \"%(key)s\" doesn't exist. Perhaps it was deleted?"
-msgstr ""
+msgid "%(name)s with ID “%(key)s” doesn’t exist. Perhaps it was deleted?"
+msgstr "%(name)s sa identifikacijom \"%(key)s\" ne postoji. Možda je izbrisan?"
 
 #, python-format
 msgid "Add %s"
@@ -237,15 +251,15 @@ msgstr "Izmeni objekat klase %s"
 msgid "View %s"
 msgstr "Pregled %s"
 
-msgid "Database error"
-msgstr "Greška u bazi podataka"
-
 #, python-format
 msgid "%(count)s %(name)s was changed successfully."
 msgid_plural "%(count)s %(name)s were changed successfully."
 msgstr[0] "Uspešno promenjen %(count)s %(name)s."
 msgstr[1] "Uspešno promenjena %(count)s %(name)s."
 msgstr[2] "Uspešno promenjenih %(count)s %(name)s."
+
+msgid "Database error"
+msgstr "Greška u bazi podataka"
 
 #, python-format
 msgid "%(total_count)s selected"
@@ -258,21 +272,39 @@ msgstr[2] "Svih %(total_count)s izabranih"
 msgid "0 of %(cnt)s selected"
 msgstr "0 od %(cnt)s izabrano"
 
+msgid "Delete"
+msgstr "Obriši"
+
 #, python-format
 msgid "Change history: %s"
 msgstr "Istorijat izmena: %s"
 
-#. Translators: Model verbose name and instance representation,
-#. suitable to be an item in a list.
+#. Translators: Model verbose name and instance
+#. representation, suitable to be an item in a
+#. list.
 #, python-format
 msgid "%(class_name)s %(instance)s"
-msgstr ""
+msgstr "%(class_name)s %(instance)s"
+
+#. Translators: This string is used as a
+#. separator between list elements.
+msgid ", "
+msgstr ", "
+
+#, python-format
+msgid "…and %(count)d more object."
+msgid_plural "…and %(count)d more objects."
+msgstr[0] "...i još %(count)d objekat."
+msgstr[1] "...i još %(count)d objekta."
+msgstr[2] "...i još %(count)d objekata."
 
 #, python-format
 msgid ""
 "Deleting %(class_name)s %(instance)s would require deleting the following "
 "protected related objects: %(related_objects)s"
 msgstr ""
+"Da bi izbrisali %(class_name)s%(instance)s potrebno je brisati i sledeće "
+"zaštićene povezane objekte: %(related_objects)s"
 
 msgid "Django site admin"
 msgstr "Django administracija sajta"
@@ -288,12 +320,12 @@ msgstr "Prijava"
 
 #, python-format
 msgid "%(app)s administration"
-msgstr ""
+msgstr "%(app)s administracija"
 
 msgid "Page not found"
 msgstr "Stranica nije pronađena"
 
-msgid "We're sorry, but the requested page could not be found."
+msgid "We’re sorry, but the requested page could not be found."
 msgstr "Žao nam je, tražena stranica nije pronađena."
 
 msgid "Home"
@@ -309,18 +341,14 @@ msgid "Server Error <em>(500)</em>"
 msgstr "Greška na serveru <em>(500)</em>"
 
 msgid ""
-"There's been an error. It's been reported to the site administrators via "
+"There’s been an error. It’s been reported to the site administrators via "
 "email and should be fixed shortly. Thanks for your patience."
 msgstr ""
+"Desila se greška. Prijavljena je administratorima sajta preko e-pošte i "
+"trebalo bi da uskoro bude ispravljena. Hvala Vam na strpljenju."
 
-msgid "Run the selected action"
-msgstr "Pokreni odabranu radnju"
-
-msgid "Go"
-msgstr "Počni"
-
-msgid "Click here to select the objects across all pages"
-msgstr "Izaberi sve objekte na ovoj stranici."
+msgid "Run"
+msgstr "Pokreni"
 
 #, python-format
 msgid "Select all %(total_count)s %(module_name)s"
@@ -329,28 +357,65 @@ msgstr "Izaberi sve %(module_name)s od %(total_count)s ukupno."
 msgid "Clear selection"
 msgstr "Poništi izbor"
 
-msgid ""
-"First, enter a username and password. Then, you'll be able to edit more user "
-"options."
-msgstr ""
-"Prvo unesite korisničko ime i lozinku. Potom ćete moći da menjate još "
-"korisničkih podešavanja."
+msgid "Breadcrumbs"
+msgstr "Mrvice"
 
-msgid "Enter a username and password."
-msgstr "Unesite korisničko ime i lozinku"
+msgid "Model name"
+msgstr "Ime modela"
+
+msgid "Add link"
+msgstr "Dodaj vezu"
+
+msgid "Change or view list link"
+msgstr "Pogledaj ili promeni vezu liste"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "View"
+msgstr "Pregled"
+
+msgid "You don’t have permission to view or edit anything."
+msgstr "Nemate dozvole da pogledate ili izmenite bilo šta."
+
+msgid "After you’ve created a user, you’ll be able to edit more user options."
+msgstr ""
+"Nakon što napravite korisnika, moći ćete da izmenite više korisničkih opcija."
+
+msgid "Error:"
+msgstr "Greška:"
 
 msgid "Change password"
 msgstr "Promena lozinke"
 
-msgid "Please correct the error below."
-msgstr ""
+msgid "Set password"
+msgstr "Postavi lozinku"
 
-msgid "Please correct the errors below."
-msgstr ""
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Molimo ispravite grešku ispod."
+msgstr[1] "Molimo ispravite greške ispod."
+msgstr[2] "Molimo ispravite greške ispod."
 
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
 msgstr "Unesite novu lozinku za korisnika <strong>%(username)s</strong>."
+
+msgid ""
+"This action will <strong>enable</strong> password-based authentication for "
+"this user."
+msgstr ""
+" Ova akcija će<strong>omogućiti</strong> autentifikaciju zasnovanu na "
+"lozinki za ovog korisnika."
+
+msgid "Disable password-based authentication"
+msgstr "Onemogući autentifikaciju zasnovanu na lozinki"
+
+msgid "Enable password-based authentication"
+msgstr "Omogući autentifikaciju zasnovanu na lozinki"
+
+msgid "Skip to main content"
+msgstr "Pređi na glavni sadržaj"
 
 msgid "Welcome,"
 msgstr "Dobrodošli,"
@@ -377,6 +442,18 @@ msgstr "Pregled na sajtu"
 msgid "Filter"
 msgstr "Filter"
 
+msgid "Hide counts"
+msgstr "Sakrij brojanje"
+
+msgid "Show counts"
+msgstr "Prikaži brojanje"
+
+msgid "Clear all filters"
+msgstr "Obriši sve filtere"
+
+msgid "Save"
+msgstr "Sačuvaj"
+
 msgid "Remove from sorting"
 msgstr "Izbaci iz sortiranja"
 
@@ -387,46 +464,53 @@ msgstr "Prioritet sortiranja: %(priority_number)s"
 msgid "Toggle sorting"
 msgstr "Uključi/isključi sortiranje"
 
-msgid "Delete"
-msgstr "Obriši"
+msgid "Toggle theme (current theme: auto)"
+msgstr "Uključi/isključi temu (trenutna tema: auto)"
+
+msgid "Toggle theme (current theme: light)"
+msgstr "Uključi/isključi temu (trenutna tema: svetla)"
+
+msgid "Toggle theme (current theme: dark)"
+msgstr "Uključi/isključi temu (trenutna tema: tamna)"
+
+#, python-format
+msgid "Filter by %(field_name)s"
+msgstr "Filtriraj po %(field_name)s"
 
 #, python-format
 msgid ""
-"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"Deleting the %(object_name)s “%(escaped_object)s” would result in deleting "
 "related objects, but your account doesn't have permission to delete the "
 "following types of objects:"
 msgstr ""
-"Uklanjanje %(object_name)s „%(escaped_object)s“ povlači uklanjanje svih "
-"objekata koji su povezani sa ovim objektom, ali vaš nalog nema dozvole za "
-"brisanje sledećih tipova objekata:"
+"Brisanje %(object_name)s “%(escaped_object)s” bi rezultiralo brisanjem "
+"povezanih objekata, ali vaš nalog nema dozvolu za brisanje sledećih tipova "
+"objekata:"
 
 #, python-format
 msgid ""
-"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"Deleting the %(object_name)s “%(escaped_object)s” would require deleting the "
 "following protected related objects:"
 msgstr ""
-"Da bi izbrisali izabran %(object_name)s „%(escaped_object)s“ potrebno je "
-"brisati i sledeće zaštićene povezane objekte:"
+"Brisanje %(object_name)s “%(escaped_object)s” bi zahtevalo brisanje sledećih "
+"zaštićenih povezanih objekata:"
 
 #, python-format
 msgid ""
-"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"Are you sure you want to delete the %(object_name)s “%(escaped_object)s”? "
 "All of the following related items will be deleted:"
 msgstr ""
-"Da sigurni da želite da obrišete %(object_name)s „%(escaped_object)s“? "
-"Sledeći objekti koji su u vezi sa ovim objektom će takođe biti obrisani:"
+"Da li ste sigurni da želite da obrišete %(object_name)s "
+"“%(escaped_object)s”? Sve sledeće povezane stavke će biti obrisane:"
 
 msgid "Objects"
-msgstr ""
+msgstr "Objekti"
 
-msgid "Yes, I'm sure"
+msgid "Yes, I’m sure"
 msgstr "Da, siguran sam"
 
 msgid "No, take me back"
-msgstr ""
-
-msgid "Delete multiple objects"
-msgstr "Brisanje više objekata"
+msgstr "Ne, hoću nazad"
 
 #, python-format
 msgid ""
@@ -454,9 +538,6 @@ msgstr ""
 "Da li ste sigurni da želite da izbrišete izabrane %(objects_name)s? Svi "
 "sledeći objekti i objekti sa njima povezani će biti izbrisani:"
 
-msgid "View"
-msgstr "Pregled"
-
 msgid "Delete?"
 msgstr "Brisanje?"
 
@@ -465,32 +546,31 @@ msgid " By %(filter_title)s "
 msgstr " %(filter_title)s "
 
 msgid "Summary"
-msgstr ""
-
-#, python-format
-msgid "Models in the %(name)s application"
-msgstr ""
-
-msgid "Add"
-msgstr "Dodaj"
-
-msgid "You don't have permission to view or edit anything."
-msgstr "Nemate dozvolu da pogledate ili izmenite bilo šta."
+msgstr "Sumarno"
 
 msgid "Recent actions"
-msgstr ""
+msgstr "Skorašnje akcije"
 
 msgid "My actions"
-msgstr ""
+msgstr "Moje akcije"
 
 msgid "None available"
 msgstr "Nema podataka"
+
+msgid "Added:"
+msgstr "Dodato:"
+
+msgid "Changed:"
+msgstr "Izmenjeno:"
+
+msgid "Deleted:"
+msgstr "Obrisano:"
 
 msgid "Unknown content"
 msgstr "Nepoznat sadržaj"
 
 msgid ""
-"Something's wrong with your database installation. Make sure the appropriate "
+"Something’s wrong with your database installation. Make sure the appropriate "
 "database tables have been created, and make sure the database is readable by "
 "the appropriate user."
 msgstr ""
@@ -502,9 +582,23 @@ msgid ""
 "You are authenticated as %(username)s, but are not authorized to access this "
 "page. Would you like to login to a different account?"
 msgstr ""
+"Prijavljeni ste kao %(username)s, ali nemate ovlašćenja da pristupite ovoj "
+"strani. Da li želite da se prijavite pod nekim drugim nalogom?"
 
-msgid "Forgotten your password or username?"
-msgstr "Zaboravili ste lozinku ili korisničko ime?"
+msgid "Forgotten your login credentials?"
+msgstr "Zaboravili ste svoje akreditive za prijavu?"
+
+msgid "Toggle navigation"
+msgstr "Uključi/isključi meni"
+
+msgid "Sidebar"
+msgstr "Bočna traka"
+
+msgid "Start typing to filter…"
+msgstr "Počnite da kucate da biste filtrirali…"
+
+msgid "Filter navigation items"
+msgstr "Filtrirajte stavke navigacije"
 
 msgid "Date/time"
 msgstr "Datum/vreme"
@@ -515,21 +609,36 @@ msgstr "Korisnik"
 msgid "Action"
 msgstr "Radnja"
 
+#, python-format
+msgid "Pagination %(name)s entries"
+msgstr "Unosi paginacije %(name)s"
+
+msgid "entry"
+msgid_plural "entries"
+msgstr[0] "unos"
+msgstr[1] "unosa"
+msgstr[2] "unosa"
+
 msgid ""
-"This object doesn't have a change history. It probably wasn't added via this "
+"This object doesn’t have a change history. It probably wasn’t added via this "
 "admin site."
 msgstr ""
 "Ovaj objekat nema zabeležen istorijat izmena. Verovatno nije dodat kroz ovaj "
 "sajt za administraciju."
 
+#, python-format
+msgid "Pagination %(name)s"
+msgstr "Paginacija %(name)s"
+
 msgid "Show all"
 msgstr "Prikaži sve"
 
-msgid "Save"
-msgstr "Sačuvaj"
-
 msgid "Popup closing…"
-msgstr ""
+msgstr "Popup se zatvara..."
+
+#, python-format
+msgid "Search %(name)s"
+msgstr "Pretraga %(name)s"
 
 msgid "Search"
 msgstr "Pretraga"
@@ -558,21 +667,28 @@ msgid "Save and view"
 msgstr "Snimi i pogledaj"
 
 msgid "Close"
-msgstr ""
+msgstr "Zatvori"
 
 #, python-format
 msgid "Change selected %(model)s"
-msgstr ""
+msgstr "Izmeni odabrani model %(model)s"
 
 #, python-format
 msgid "Add another %(model)s"
-msgstr ""
+msgstr "Dodaj još jedan model %(model)s"
 
 #, python-format
 msgid "Delete selected %(model)s"
-msgstr ""
+msgstr "Obriši odabrani model %(model)s"
 
-msgid "Thanks for spending some quality time with the Web site today."
+#, python-format
+msgid "View selected %(model)s"
+msgstr "Izabran prikaz %(model)s"
+
+msgid "Logout"
+msgstr "Odjavi se"
+
+msgid "Thanks for spending some quality time with the web site today."
 msgstr "Hvala što ste danas proveli vreme na ovom sajtu."
 
 msgid "Log in again"
@@ -585,7 +701,7 @@ msgid "Your password was changed."
 msgstr "Vaša lozinka je izmenjena."
 
 msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
+"Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
 "Iz bezbednosnih razloga prvo unesite svoju staru lozinku, a novu zatim "
@@ -624,26 +740,32 @@ msgstr ""
 "iskorišćen.  Ponovo zatražite resetovanje lozinke."
 
 msgid ""
-"We've emailed you instructions for setting your password, if an account "
+"We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
+"Poslali smo Vam uputstva za postavljanje lozinke, ukoliko nalog sa ovom "
+"adresom postoji. Trebalo bi da ih dobijete uskoro."
 
 msgid ""
-"If you don't receive an email, please make sure you've entered the address "
+"If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
+"Ako ne dobijete poruku, proverite da li ste uneli dobru adresu sa kojom ste "
+"se i registrovali i proverite fasciklu za neželjenu poštu."
 
 #, python-format
 msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at %(site_name)s."
 msgstr ""
+"Primate ovu poruku zato što ste zatražili resetovanje lozinke za korisnički "
+"nalog na sajtu %(site_name)s."
 
 msgid "Please go to the following page and choose a new password:"
 msgstr "Idite na sledeću stranicu i postavite novu lozinku."
 
-msgid "Your username, in case you've forgotten:"
-msgstr "Ukoliko ste zaboravili, vaše korisničko ime:"
+msgid "In case you’ve forgotten, you are:"
+msgstr "U slučaju da ste zaboravili, vi ste:"
 
 msgid "Thanks for using our site!"
 msgstr "Hvala što koristite naš sajt!"
@@ -653,15 +775,20 @@ msgid "The %(site_name)s team"
 msgstr "Ekipa sajta %(site_name)s"
 
 msgid ""
-"Forgotten your password? Enter your email address below, and we'll email "
+"Forgotten your password? Enter your email address below, and we’ll email "
 "instructions for setting a new one."
 msgstr ""
+"Zaboravili ste lozinku? Unesite adresu e-pošte ispod i poslaćemo Vam na nju "
+"uputstva za postavljanje nove lozinke."
 
 msgid "Email address:"
-msgstr ""
+msgstr "Adresa e-pošte:"
 
 msgid "Reset my password"
 msgstr "Resetuj moju lozinku"
+
+msgid "Select all objects on this page for an action"
+msgstr "Izaberite sve objekte na ovoj stranici za radnju"
 
 msgid "All dates"
 msgstr "Svi datumi"
@@ -676,7 +803,7 @@ msgstr "Odaberi objekat klase %s za izmenu"
 
 #, python-format
 msgid "Select %s to view"
-msgstr "Odaberi %sza pregled"
+msgstr "Odaberi %s za pregled"
 
 msgid "Date:"
 msgstr "Datum:"
@@ -688,7 +815,7 @@ msgid "Lookup"
 msgstr "Pretraži"
 
 msgid "Currently:"
-msgstr ""
+msgstr "Trenutno:"
 
 msgid "Change:"
-msgstr ""
+msgstr "Izmena:"

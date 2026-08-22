@@ -29,7 +29,7 @@ echo "Running database migrations..."
 python manage.py migrate
 
 # Start Django server
-echo "Starting Django server..."
+echo "Starting Django server at http://127.0.0.1:8000"
 python manage.py runserver 127.0.0.1:8000 &
 
 # -------- Frontend Setup --------
@@ -47,4 +47,3 @@ fi
 # Start frontend
 echo "Starting React development server..."
 npm run dev
-

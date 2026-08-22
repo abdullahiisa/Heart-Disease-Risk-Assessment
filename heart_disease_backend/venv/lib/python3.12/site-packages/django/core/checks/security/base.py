@@ -1,7 +1,7 @@
 from django.conf import settings
+from django.core.checks import Error, Tags, Warning, register
 from django.core.exceptions import ImproperlyConfigured
-
-from .. import Error, Tags, Warning, register
+from django.utils.csp import CSP
 
 CROSS_ORIGIN_OPENER_POLICY_VALUES = {
     "same-origin",
@@ -141,6 +141,24 @@ E024 = Error(
 
 W025 = Warning(SECRET_KEY_WARNING_MSG, id="security.W025")
 
+E026 = Error(
+    "The Content Security Policy setting '%s' must be a dictionary (got %r instead).",
+    id="security.E026",
+)
+
+W027 = Warning(
+    "Your Content Security Policy includes CSP.NONCE and "
+    "'django.middleware.csp.ContentSecurityPolicyMiddleware' is enabled, but "
+    "'django.template.context_processors.csp' is not configured. The nonce "
+    "will appear in the response header but not in rendered templates, so "
+    "nonce-based protection will not take effect.",
+    hint=(
+        "Add 'django.template.context_processors.csp' to the 'context_processors' "
+        "option of at least one template backend."
+    ),
+    id="security.W027",
+)
+
 
 def _security_middleware():
     return "django.middleware.security.SecurityMiddleware" in settings.MIDDLEWARE
@@ -149,6 +167,36 @@ def _security_middleware():
 def _xframe_middleware():
     return (
         "django.middleware.clickjacking.XFrameOptionsMiddleware" in settings.MIDDLEWARE
+    )
+
+
+def _csp_middleware():
+    return (
+        "django.middleware.csp.ContentSecurityPolicyMiddleware" in settings.MIDDLEWARE
+    )
+
+
+def _csp_policy_contains_nonce(policy):
+    try:
+        policy_values = policy.values()
+    except AttributeError:
+        return False
+    for values in policy_values:
+        try:
+            if values == CSP.NONCE or CSP.NONCE in values:
+                return True
+        except TypeError:
+            pass
+    return False
+
+
+def _csp_context_processor_configured():
+    context_processor = "django.template.context_processors.csp"
+    return any(
+        isinstance(template, dict)
+        and context_processor
+        in template.get("OPTIONS", {}).get("context_processors", [])
+        for template in getattr(settings, "TEMPLATES", [])
     )
 
 
@@ -261,7 +309,8 @@ def check_referrer_policy(app_configs, **kwargs):
     if _security_middleware():
         if settings.SECURE_REFERRER_POLICY is None:
             return [W022]
-        # Support a comma-separated string or iterable of values to allow fallback.
+        # Support a comma-separated string or iterable of values to allow
+        # fallback.
         if isinstance(settings.SECURE_REFERRER_POLICY, str):
             values = {v.strip() for v in settings.SECURE_REFERRER_POLICY.split(",")}
         else:
@@ -280,4 +329,34 @@ def check_cross_origin_opener_policy(app_configs, **kwargs):
         not in CROSS_ORIGIN_OPENER_POLICY_VALUES
     ):
         return [E024]
+    return []
+
+
+@register(Tags.security)
+def check_csp_settings(app_configs, **kwargs):
+    """
+    Validate that CSP settings are properly configured when enabled.
+
+    Ensures both SECURE_CSP and SECURE_CSP_REPORT_ONLY are dictionaries.
+    """
+    # CSP settings must be a dictionary or None.
+    return [
+        Error(E026.msg % (name, value), id=E026.id)
+        for name in ("SECURE_CSP", "SECURE_CSP_REPORT_ONLY")
+        if (value := getattr(settings, name, None)) is not None
+        and not isinstance(value, dict)
+    ]
+
+
+@register(Tags.security)
+def check_csp_nonce_context_processor(app_configs, **kwargs):
+    if (
+        _csp_middleware()
+        and any(
+            _csp_policy_contains_nonce(getattr(settings, name, None))
+            for name in ("SECURE_CSP", "SECURE_CSP_REPORT_ONLY")
+        )
+        and not _csp_context_processor_configured()
+    ):
+        return [W027]
     return []

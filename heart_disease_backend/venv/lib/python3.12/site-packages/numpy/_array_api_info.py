@@ -24,8 +24,10 @@ from numpy._core import (
     uint32,
     uint64,
 )
+from numpy._utils import set_module
 
 
+@set_module('numpy')
 class __array_namespace_info__:
     """
     Get the array API inspection namespace for NumPy.
@@ -58,8 +60,6 @@ class __array_namespace_info__:
 
     """
 
-    __module__ = 'numpy'
-
     def capabilities(self):
         """
         Return a dictionary of array API library capabilities.
@@ -72,6 +72,9 @@ class __array_namespace_info__:
         - **"data-dependent shapes"**: boolean indicating whether an array
           library supports data-dependent output shapes. Always ``True`` for
           NumPy.
+
+        - **"max dimensions"**: integer indicating maximum number of supported
+          dimensions. Always ``64`` for NumPy.
 
         See
         https://data-apis.org/array-api/latest/API_specification/generated/array_api.info.capabilities.html
@@ -322,7 +325,7 @@ class __array_namespace_info__:
         """
         The devices supported by NumPy.
 
-        For NumPy, this always returns ``['cpu']``.
+        For NumPy, this always returns ``('cpu',)``.
 
         Returns
         -------
@@ -340,7 +343,7 @@ class __array_namespace_info__:
         --------
         >>> info = np.__array_namespace_info__()
         >>> info.devices()
-        ['cpu']
+        ('cpu',)
 
         """
-        return ["cpu"]
+        return ("cpu",)

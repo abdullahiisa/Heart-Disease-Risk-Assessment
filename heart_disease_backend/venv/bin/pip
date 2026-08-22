@@ -1,4 +1,4 @@
-#!/home/abdullahiisa/github/Heart-Disease-Risk-Assesment/heart_disease_backend/venv/bin/python3
+#!/home/abdullahiisa/github/Heart-Disease-Risk-Assessment/heart_disease_backend/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

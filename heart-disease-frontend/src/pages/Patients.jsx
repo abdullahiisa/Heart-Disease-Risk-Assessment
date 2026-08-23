@@ -79,7 +79,7 @@ export default function Patients() {
         </div>
         <button
           onClick={() => setShowAddModal(true)}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm font-medium"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium"
         >
           <Plus className="w-4 h-4" />
           Add Patient
@@ -95,7 +95,7 @@ export default function Patients() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by name, MRN, phone, or email..."
-            className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+            className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
           />
         </div>
       </div>
@@ -140,7 +140,7 @@ export default function Patients() {
                       <td className="px-6 py-4">
                         <Link
                           to={`/patients/${p.id}`}
-                          className="text-sm text-red-600 hover:text-red-700 font-medium"
+                          className="text-sm text-green-600 hover:text-green-700 font-medium"
                         >
                           View
                         </Link>
@@ -185,7 +185,7 @@ export default function Patients() {
               !search && (
                 <button
                   onClick={() => setShowAddModal(true)}
-                  className="px-4 py-2 bg-red-600 text-white text-sm rounded-lg hover:bg-red-700"
+                  className="px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700"
                 >
                   Add Patient
                 </button>
@@ -215,7 +215,7 @@ export default function Patients() {
                     required
                     value={newPatient.first_name}
                     onChange={(e) => setNewPatient({ ...newPatient, first_name: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
                 <div>
@@ -225,7 +225,7 @@ export default function Patients() {
                     required
                     value={newPatient.last_name}
                     onChange={(e) => setNewPatient({ ...newPatient, last_name: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
                 <div>
@@ -234,7 +234,7 @@ export default function Patients() {
                     type="date"
                     value={newPatient.date_of_birth}
                     onChange={(e) => setNewPatient({ ...newPatient, date_of_birth: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
                 <div>
@@ -242,7 +242,7 @@ export default function Patients() {
                   <select
                     value={newPatient.gender}
                     onChange={(e) => setNewPatient({ ...newPatient, gender: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   >
                     <option value="">Select</option>
                     <option value="M">Male</option>
@@ -255,7 +255,7 @@ export default function Patients() {
                     type="tel"
                     value={newPatient.phone}
                     onChange={(e) => setNewPatient({ ...newPatient, phone: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
                 <div>
@@ -264,7 +264,7 @@ export default function Patients() {
                     type="email"
                     value={newPatient.email}
                     onChange={(e) => setNewPatient({ ...newPatient, email: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
                 <div>
@@ -272,7 +272,7 @@ export default function Patients() {
                   <select
                     value={newPatient.blood_type}
                     onChange={(e) => setNewPatient({ ...newPatient, blood_type: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   >
                     <option value="">Select</option>
                     <option value="A+">A+</option>
@@ -291,7 +291,7 @@ export default function Patients() {
                     type="text"
                     value={newPatient.emergency_contact}
                     onChange={(e) => setNewPatient({ ...newPatient, emergency_contact: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
               </div>
@@ -302,7 +302,7 @@ export default function Patients() {
                   value={newPatient.address}
                   onChange={(e) => setNewPatient({ ...newPatient, address: e.target.value })}
                   rows={2}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none resize-none"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none resize-none"
                 />
               </div>
 
@@ -312,7 +312,7 @@ export default function Patients() {
                   value={newPatient.allergies}
                   onChange={(e) => setNewPatient({ ...newPatient, allergies: e.target.value })}
                   rows={2}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none resize-none"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none resize-none"
                   placeholder="List any known allergies..."
                 />
               </div>
@@ -323,7 +323,7 @@ export default function Patients() {
                   value={newPatient.medical_history}
                   onChange={(e) => setNewPatient({ ...newPatient, medical_history: e.target.value })}
                   rows={2}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none resize-none"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none resize-none"
                   placeholder="Relevant medical history..."
                 />
               </div>
@@ -339,7 +339,7 @@ export default function Patients() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="flex-1 px-4 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 text-sm font-medium"
+                  className="flex-1 px-4 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 text-sm font-medium"
                 >
                   {saving ? 'Saving...' : 'Add Patient'}
                 </button>

@@ -42,7 +42,7 @@ export default function NewAssessment() {
   useEffect(() => {
     api.get('patients/?page_size=100')
       .then((res) => setPatients(res.data.results || []))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const handleChange = (e) => {
@@ -111,10 +111,9 @@ export default function NewAssessment() {
   };
 
   const inputClass = (field) =>
-    `w-full border rounded-lg px-3 py-2.5 text-sm transition-colors outline-none ${
-      errors[field]
-        ? 'border-red-300 focus:ring-2 focus:ring-red-200 focus:border-red-400'
-        : 'border-gray-300 focus:ring-2 focus:ring-red-200 focus:border-red-400'
+    `w-full border rounded-lg px-3 py-2.5 text-sm transition-colors outline-none ${errors[field]
+      ? 'border-green-300 focus:ring-2 focus:ring-green-200 focus:border-green-400'
+      : 'border-gray-300 focus:ring-2 focus:ring-green-200 focus:border-green-400'
     }`;
 
   const selectClass = (field) => inputClass(field);
@@ -135,12 +134,11 @@ export default function NewAssessment() {
           <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full animate-fade-in">
             <div className="p-6 text-center border-b border-gray-100">
               <div
-                className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                  result.prediction === 1 ? 'bg-red-100' : 'bg-green-100'
-                }`}
+                className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${result.prediction === 1 ? 'bg-green-100' : 'bg-green-100'
+                  }`}
               >
                 {result.prediction === 1 ? (
-                  <AlertCircle className="w-8 h-8 text-red-600" />
+                  <AlertCircle className="w-8 h-8 text-green-600" />
                 ) : (
                   <CheckCircle2 className="w-8 h-8 text-green-600" />
                 )}
@@ -150,14 +148,12 @@ export default function NewAssessment() {
 
             <div className="p-6 space-y-4">
               <div
-                className={`text-center p-4 rounded-xl ${
-                  result.prediction === 1 ? 'bg-red-50' : 'bg-green-50'
-                }`}
+                className={`text-center p-4 rounded-xl ${result.prediction === 1 ? 'bg-green-50' : 'bg-green-50'
+                  }`}
               >
                 <p
-                  className={`text-2xl font-bold ${
-                    result.prediction === 1 ? 'text-red-700' : 'text-green-700'
-                  }`}
+                  className={`text-2xl font-bold ${result.prediction === 1 ? 'text-green-700' : 'text-green-700'
+                    }`}
                 >
                   {result.risk}
                 </p>
@@ -204,7 +200,7 @@ export default function NewAssessment() {
               {result.assessment_id && (
                 <button
                   onClick={() => navigate(`/assessments/${result.assessment_id}`)}
-                  className="flex-1 px-4 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm font-medium"
+                  className="flex-1 px-4 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium"
                 >
                   View Details
                 </button>
@@ -217,9 +213,9 @@ export default function NewAssessment() {
       {/* Form */}
       <form onSubmit={handleSubmit} className="space-y-6">
         {errors.submit && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-            <p className="text-sm text-red-700">{errors.submit}</p>
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
+            <AlertCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+            <p className="text-sm text-green-700">{errors.submit}</p>
           </div>
         )}
 
@@ -257,7 +253,7 @@ export default function NewAssessment() {
                 className={inputClass('age')}
                 placeholder="e.g. 55"
               />
-              {errors.age && <p className="text-xs text-red-600 mt-1">{errors.age}</p>}
+              {errors.age && <p className="text-xs text-green-600 mt-1">{errors.age}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Sex *</label>
@@ -266,7 +262,7 @@ export default function NewAssessment() {
                 <option value="1">Male</option>
                 <option value="0">Female</option>
               </select>
-              {errors.sex && <p className="text-xs text-red-600 mt-1">{errors.sex}</p>}
+              {errors.sex && <p className="text-xs text-green-600 mt-1">{errors.sex}</p>}
             </div>
           </div>
         </div>
@@ -283,7 +279,7 @@ export default function NewAssessment() {
               <option value="2">Non-anginal Pain</option>
               <option value="3">Asymptomatic</option>
             </select>
-            {errors.cp && <p className="text-xs text-red-600 mt-1">{errors.cp}</p>}
+            {errors.cp && <p className="text-xs text-green-600 mt-1">{errors.cp}</p>}
           </div>
         </div>
 
@@ -301,7 +297,7 @@ export default function NewAssessment() {
                 className={inputClass('trestbps')}
                 placeholder="e.g. 120"
               />
-              {errors.trestbps && <p className="text-xs text-red-600 mt-1">{errors.trestbps}</p>}
+              {errors.trestbps && <p className="text-xs text-green-600 mt-1">{errors.trestbps}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Cholesterol (mg/dl) *</label>
@@ -313,7 +309,7 @@ export default function NewAssessment() {
                 className={inputClass('chol')}
                 placeholder="e.g. 200"
               />
-              {errors.chol && <p className="text-xs text-red-600 mt-1">{errors.chol}</p>}
+              {errors.chol && <p className="text-xs text-green-600 mt-1">{errors.chol}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Fasting Blood Sugar &gt; 120 *</label>
@@ -322,7 +318,7 @@ export default function NewAssessment() {
                 <option value="1">Yes</option>
                 <option value="0">No</option>
               </select>
-              {errors.fbs && <p className="text-xs text-red-600 mt-1">{errors.fbs}</p>}
+              {errors.fbs && <p className="text-xs text-green-600 mt-1">{errors.fbs}</p>}
             </div>
           </div>
         </div>
@@ -339,7 +335,7 @@ export default function NewAssessment() {
                 <option value="1">ST-T Abnormality</option>
                 <option value="2">Left Ventricular Hypertrophy</option>
               </select>
-              {errors.restecg && <p className="text-xs text-red-600 mt-1">{errors.restecg}</p>}
+              {errors.restecg && <p className="text-xs text-green-600 mt-1">{errors.restecg}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Max Heart Rate *</label>
@@ -351,7 +347,7 @@ export default function NewAssessment() {
                 className={inputClass('thalach')}
                 placeholder="e.g. 150"
               />
-              {errors.thalach && <p className="text-xs text-red-600 mt-1">{errors.thalach}</p>}
+              {errors.thalach && <p className="text-xs text-green-600 mt-1">{errors.thalach}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Exercise Induced Angina *</label>
@@ -360,7 +356,7 @@ export default function NewAssessment() {
                 <option value="1">Yes</option>
                 <option value="0">No</option>
               </select>
-              {errors.exang && <p className="text-xs text-red-600 mt-1">{errors.exang}</p>}
+              {errors.exang && <p className="text-xs text-green-600 mt-1">{errors.exang}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">ST Depression (Oldpeak) *</label>
@@ -373,7 +369,7 @@ export default function NewAssessment() {
                 className={inputClass('oldpeak')}
                 placeholder="e.g. 1.5"
               />
-              {errors.oldpeak && <p className="text-xs text-red-600 mt-1">{errors.oldpeak}</p>}
+              {errors.oldpeak && <p className="text-xs text-green-600 mt-1">{errors.oldpeak}</p>}
             </div>
           </div>
         </div>
@@ -390,7 +386,7 @@ export default function NewAssessment() {
                 <option value="1">Flat</option>
                 <option value="2">Downsloping</option>
               </select>
-              {errors.slope && <p className="text-xs text-red-600 mt-1">{errors.slope}</p>}
+              {errors.slope && <p className="text-xs text-green-600 mt-1">{errors.slope}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Major Vessels (0–3) *</label>
@@ -404,7 +400,7 @@ export default function NewAssessment() {
                 className={inputClass('ca')}
                 placeholder="0-3"
               />
-              {errors.ca && <p className="text-xs text-red-600 mt-1">{errors.ca}</p>}
+              {errors.ca && <p className="text-xs text-green-600 mt-1">{errors.ca}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Thalassemia *</label>
@@ -414,23 +410,23 @@ export default function NewAssessment() {
                 <option value="2">Fixed Defect</option>
                 <option value="3">Reversible Defect</option>
               </select>
-              {errors.thal && <p className="text-xs text-red-600 mt-1">{errors.thal}</p>}
+              {errors.thal && <p className="text-xs text-green-600 mt-1">{errors.thal}</p>}
             </div>
           </div>
         </div>
 
         {/* Notes */}
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
+        {/* <div className="bg-white rounded-xl border border-gray-200 p-6">
           <h3 className="text-base font-semibold text-gray-900 mb-4">Clinical Notes (Optional)</h3>
           <textarea
             name="notes"
             value={formData.notes}
             onChange={handleChange}
             rows={3}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none resize-none"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none resize-none"
             placeholder="Add any relevant clinical observations..."
           />
-        </div>
+        </div> */}
 
         {/* Submit */}
         <div className="flex gap-3">
@@ -444,7 +440,7 @@ export default function NewAssessment() {
           <button
             type="submit"
             disabled={loading}
-            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-semibold transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-semibold transition-colors"
           >
             {loading ? (
               <>

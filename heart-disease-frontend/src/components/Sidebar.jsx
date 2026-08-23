@@ -11,6 +11,8 @@ import {
   Menu,
 } from 'lucide-react';
 
+import Logo from '../assets/Logo.svg'
+
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/assessment/new', icon: ClipboardPlus, label: 'New Assessment' },
@@ -45,8 +47,9 @@ export default function Sidebar({ isOpen, onClose }) {
         {/* Logo */}
         <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
-              <Heart className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+              {/* <Heart className="w-5 h-5 text-white" /> */}
+              <img src={Logo} alt="ABU Crime Management System Logo" className='w-10 h-10' />
             </div>
             <span className="font-bold text-gray-900 text-lg">CardioAssess</span>
           </div>
@@ -74,14 +77,13 @@ export default function Sidebar({ isOpen, onClose }) {
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
                   transition-colors duration-150
-                  ${
-                    isActive
-                      ? 'bg-red-50 text-red-700'
-                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  ${isActive
+                    ? 'bg-green-50 text-green-700'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                   }
                 `}
               >
-                <Icon className={`w-5 h-5 ${isActive ? 'text-red-600' : 'text-gray-400'}`} />
+                <Icon className={`w-5 h-5 ${isActive ? 'text-green-600' : 'text-gray-400'}`} />
                 {label}
               </NavLink>
             );
@@ -95,7 +97,7 @@ export default function Sidebar({ isOpen, onClose }) {
               <span className="text-sm font-medium text-gray-600">DR</span>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900 truncate">Dr. User</p>
+              <p className="text-sm font-medium text-gray-900 truncate">Dr. Abdullahi</p>
               <p className="text-xs text-gray-500 truncate">Cardiologist</p>
             </div>
           </div>

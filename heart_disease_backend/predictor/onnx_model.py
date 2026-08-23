@@ -4,8 +4,8 @@ import os
 
 MODEL_PATH = os.path.join(
     os.path.dirname(__file__),
-    "ml_models",
-    "heart_disease_pipeline.onnx"
+    "../../models",
+    "heart_disease_logistic_regression_pipeline.onnx"
 )
 
 session = ort.InferenceSession(MODEL_PATH, providers=["CPUExecutionProvider"])

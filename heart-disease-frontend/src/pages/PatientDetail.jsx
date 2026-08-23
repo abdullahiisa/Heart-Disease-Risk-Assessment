@@ -100,7 +100,7 @@ export default function PatientDetail() {
         <div className="flex gap-2">
           <Link
             to={`/assessment/new?patient=${id}`}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm font-medium"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium"
           >
             <Plus className="w-4 h-4" />
             New Assessment
@@ -114,7 +114,7 @@ export default function PatientDetail() {
           </button>
           <button
             onClick={handleDelete}
-            className="inline-flex items-center gap-2 px-4 py-2 border border-red-300 text-red-700 rounded-lg hover:bg-red-50 text-sm font-medium"
+            className="inline-flex items-center gap-2 px-4 py-2 border border-green-300 text-green-700 rounded-lg hover:bg-green-50 text-sm font-medium"
           >
             <Trash2 className="w-4 h-4" />
           </button>
@@ -189,9 +189,8 @@ export default function PatientDetail() {
                     <td className="px-6 py-4 text-sm text-gray-600">{a.age || '—'}</td>
                     <td className="px-6 py-4">
                       <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          a.result === 1 ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
-                        }`}
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${a.result === 1 ? 'bg-green-100 text-green-800' : 'bg-green-100 text-green-800'
+                          }`}
                       >
                         {a.risk_label}
                       </span>
@@ -200,7 +199,7 @@ export default function PatientDetail() {
                       {new Date(a.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4">
-                      <Link to={`/assessments/${a.id}`} className="text-sm text-red-600 hover:text-red-700 font-medium">
+                      <Link to={`/assessments/${a.id}`} className="text-sm text-green-600 hover:text-green-700 font-medium">
                         View
                       </Link>
                     </td>
@@ -217,7 +216,7 @@ export default function PatientDetail() {
             action={
               <Link
                 to={`/assessment/new?patient=${id}`}
-                className="px-4 py-2 bg-red-600 text-white text-sm rounded-lg hover:bg-red-700"
+                className="px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700"
               >
                 New Assessment
               </Link>
@@ -242,7 +241,7 @@ export default function PatientDetail() {
                     type="text"
                     value={editData.first_name}
                     onChange={(e) => setEditData({ ...editData, first_name: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
                 <div>
@@ -251,7 +250,7 @@ export default function PatientDetail() {
                     type="text"
                     value={editData.last_name}
                     onChange={(e) => setEditData({ ...editData, last_name: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
                 <div>
@@ -260,7 +259,7 @@ export default function PatientDetail() {
                     type="tel"
                     value={editData.phone}
                     onChange={(e) => setEditData({ ...editData, phone: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
                 <div>
@@ -269,7 +268,7 @@ export default function PatientDetail() {
                     type="email"
                     value={editData.email}
                     onChange={(e) => setEditData({ ...editData, email: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   />
                 </div>
               </div>
@@ -279,7 +278,7 @@ export default function PatientDetail() {
                   value={editData.allergies}
                   onChange={(e) => setEditData({ ...editData, allergies: e.target.value })}
                   rows={2}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none resize-none"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none resize-none"
                 />
               </div>
               <div>
@@ -288,7 +287,7 @@ export default function PatientDetail() {
                   value={editData.medical_history}
                   onChange={(e) => setEditData({ ...editData, medical_history: e.target.value })}
                   rows={3}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none resize-none"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none resize-none"
                 />
               </div>
               <div className="flex gap-3 pt-2">
@@ -301,7 +300,7 @@ export default function PatientDetail() {
                 <button
                   onClick={handleSave}
                   disabled={saving}
-                  className="flex-1 px-4 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 text-sm font-medium"
+                  className="flex-1 px-4 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 text-sm font-medium"
                 >
                   {saving ? 'Saving...' : 'Save Changes'}
                 </button>

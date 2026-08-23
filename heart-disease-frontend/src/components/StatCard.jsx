@@ -1,13 +1,13 @@
 export default function StatCard({ title, value, icon: Icon, color = 'red', trend, trendValue }) {
   const colorClasses = {
-    red: 'bg-red-50 text-red-600',
+    red: 'bg-green-50 text-green-600',
     green: 'bg-green-50 text-green-600',
     blue: 'bg-blue-50 text-blue-600',
     amber: 'bg-amber-50 text-amber-600',
   };
 
   const iconBgClasses = {
-    red: 'bg-red-100',
+    red: 'bg-green-100',
     green: 'bg-green-100',
     blue: 'bg-blue-100',
     amber: 'bg-amber-100',
@@ -20,7 +20,7 @@ export default function StatCard({ title, value, icon: Icon, color = 'red', tren
           <p className="text-sm font-medium text-gray-500">{title}</p>
           <p className="text-2xl font-bold text-gray-900 mt-1">{value}</p>
           {trend && (
-            <p className={`text-xs mt-2 ${trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
+            <p className={`text-xs mt-2 ${trend === 'up' ? 'text-green-600' : 'text-green-600'}`}>
               {trend === 'up' ? '↑' : '↓'} {trendValue}
             </p>
           )}

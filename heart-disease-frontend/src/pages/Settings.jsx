@@ -37,7 +37,7 @@ export default function Settings() {
             <input
               type="text"
               defaultValue="Dr. User"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
             />
           </div>
           <div>
@@ -45,7 +45,7 @@ export default function Settings() {
             <input
               type="text"
               defaultValue="Cardiologist"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
             />
           </div>
           <div>
@@ -53,7 +53,7 @@ export default function Settings() {
             <input
               type="email"
               defaultValue="doctor@hospital.com"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
             />
           </div>
           <div>
@@ -61,7 +61,7 @@ export default function Settings() {
             <input
               type="text"
               defaultValue="Cardiology"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
             />
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function Settings() {
             <select
               value={settings.language}
               onChange={(e) => setSettings({ ...settings, language: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
             >
               <option value="en">English</option>
               <option value="es">Spanish</option>
@@ -120,7 +120,7 @@ export default function Settings() {
             <select
               value={settings.timezone}
               onChange={(e) => setSettings({ ...settings, timezone: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
             >
               <option value="UTC">UTC</option>
               <option value="EST">Eastern Time</option>
@@ -171,7 +171,7 @@ export default function Settings() {
       <div className="flex justify-end">
         <button
           onClick={handleSave}
-          className="inline-flex items-center gap-2 px-6 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm font-medium"
+          className="inline-flex items-center gap-2 px-6 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium"
         >
           <Save className="w-4 h-4" />
           {saved ? 'Saved!' : 'Save Settings'}
@@ -190,14 +190,12 @@ function ToggleSetting({ label, description, checked, onChange }) {
       </div>
       <button
         onClick={() => onChange(!checked)}
-        className={`relative w-11 h-6 rounded-full transition-colors ${
-          checked ? 'bg-red-600' : 'bg-gray-200'
-        }`}
+        className={`relative w-11 h-6 rounded-full transition-colors ${checked ? 'bg-green-600' : 'bg-gray-200'
+          }`}
       >
         <span
-          className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
-            checked ? 'translate-x-5' : 'translate-x-0'
-          }`}
+          className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${checked ? 'translate-x-5' : 'translate-x-0'
+            }`}
         />
       </button>
     </div>

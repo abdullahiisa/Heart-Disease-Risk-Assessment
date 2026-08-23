@@ -30,11 +30,11 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-gray-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
             <Heart className="w-9 h-9 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900">CardioAssess</h1>
@@ -47,8 +47,8 @@ export default function Login({ onLogin }) {
           <p className="text-sm text-gray-500 mb-6">Sign in to your account</p>
 
           {error && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
-              <p className="text-sm text-red-700">{error}</p>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
+              <p className="text-sm text-green-700">{error}</p>
             </div>
           )}
 
@@ -61,7 +61,7 @@ export default function Login({ onLogin }) {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                  className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   placeholder="doctor@hospital.com"
                 />
               </div>
@@ -75,7 +75,7 @@ export default function Login({ onLogin }) {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-red-200 focus:border-red-400 outline-none"
+                  className="w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-green-200 focus:border-green-400 outline-none"
                   placeholder="••••••••"
                 />
                 <button
@@ -94,10 +94,10 @@ export default function Login({ onLogin }) {
 
             <div className="flex items-center justify-between">
               <label className="flex items-center gap-2">
-                <input type="checkbox" className="rounded border-gray-300 text-red-600 focus:ring-red-500" />
+                <input type="checkbox" className="rounded border-gray-300 text-green-600 focus:ring-green-500" />
                 <span className="text-sm text-gray-600">Remember me</span>
               </label>
-              <button type="button" className="text-sm text-red-600 hover:text-red-700 font-medium">
+              <button type="button" className="text-sm text-green-600 hover:text-green-700 font-medium">
                 Forgot password?
               </button>
             </div>
@@ -105,7 +105,7 @@ export default function Login({ onLogin }) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 text-sm font-semibold transition-colors"
+              className="w-full py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 text-sm font-semibold transition-colors"
             >
               {loading ? 'Signing in...' : 'Sign In'}
             </button>

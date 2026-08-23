@@ -77,9 +77,9 @@ export default function Reports() {
             {/* Bar Chart */}
             <div className="flex items-end gap-8 justify-center h-48">
               <div className="flex flex-col items-center gap-2">
-                <span className="text-sm font-bold text-red-600">{stats.high_risk_count}</span>
+                <span className="text-sm font-bold text-green-600">{stats.high_risk_count}</span>
                 <div
-                  className="w-24 bg-red-500 rounded-t-lg transition-all duration-500"
+                  className="w-24 bg-green-500 rounded-t-lg transition-all duration-500"
                   style={{ height: `${Math.max(20, (stats.high_risk_count / stats.total_assessments) * 160)}px` }}
                 />
                 <span className="text-xs text-gray-600">High Risk</span>
@@ -99,11 +99,11 @@ export default function Reports() {
               <div>
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-gray-600">High Risk</span>
-                  <span className="font-medium text-red-600">{highPct}%</span>
+                  <span className="font-medium text-green-600">{highPct}%</span>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-4">
                   <div
-                    className="bg-red-500 h-4 rounded-full transition-all duration-500"
+                    className="bg-green-500 h-4 rounded-full transition-all duration-500"
                     style={{ width: `${highPct}%` }}
                   />
                 </div>
@@ -143,9 +143,8 @@ export default function Reports() {
                   </p>
                 </div>
                 <span
-                  className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                    a.result === 1 ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
-                  }`}
+                  className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${a.result === 1 ? 'bg-green-100 text-green-800' : 'bg-green-100 text-green-800'
+                    }`}
                 >
                   {a.risk_label}
                 </span>
@@ -162,13 +161,13 @@ export default function Reports() {
 
 function ReportCard({ title, value, icon: Icon, color, subtitle }) {
   const bgClasses = {
-    red: 'bg-red-50',
+    red: 'bg-green-50',
     green: 'bg-green-50',
     blue: 'bg-blue-50',
     amber: 'bg-amber-50',
   };
   const iconClasses = {
-    red: 'text-red-600',
+    red: 'text-green-600',
     green: 'text-green-600',
     blue: 'text-blue-600',
     amber: 'text-amber-600',

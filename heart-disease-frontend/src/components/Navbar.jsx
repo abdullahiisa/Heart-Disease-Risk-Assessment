@@ -27,11 +27,11 @@ export default function Navbar({ onMenuClick }) {
         <div className="flex items-center gap-3">
           <button className="relative p-2 rounded-md hover:bg-gray-100">
             <Bell className="w-5 h-5 text-gray-600" />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-green-500 rounded-full" />
           </button>
 
-          <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-            <span className="text-sm font-semibold text-red-700">DR</span>
+          <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+            <span className="text-sm font-semibold text-green-700">DR</span>
           </div>
         </div>
       </div>

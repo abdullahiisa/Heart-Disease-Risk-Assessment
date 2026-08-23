@@ -51,7 +51,7 @@ const HeartDiseaseForm = () => {
         <>
             {/* MAIN FORM */}
             <div className="max-w-3xl mx-auto my-6 p-6 bg-white shadow-lg rounded-lg">
-                <h2 className="text-3xl font-bold text-center mb-8 text-red-600">
+                <h2 className="text-3xl font-bold text-center mb-8 text-green-600">
                     Heart Disease Risk Assessment
                 </h2>
 
@@ -67,7 +67,7 @@ const HeartDiseaseForm = () => {
                                     min="1"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 />
                             </div>
 
@@ -77,7 +77,7 @@ const HeartDiseaseForm = () => {
                                     name="sex"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 >
                                     <option value="">Select</option>
                                     <option value="1">Male</option>
@@ -96,7 +96,7 @@ const HeartDiseaseForm = () => {
                                 name="cp"
                                 required
                                 onChange={handleChange}
-                                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                             >
                                 <option value="">Select</option>
                                 <option value="0">Typical Angina</option>
@@ -118,7 +118,7 @@ const HeartDiseaseForm = () => {
                                     name="trestbps"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 />
                             </div>
 
@@ -129,7 +129,7 @@ const HeartDiseaseForm = () => {
                                     name="chol"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 />
                             </div>
 
@@ -139,7 +139,7 @@ const HeartDiseaseForm = () => {
                                     name="fbs"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 >
                                     <option value="">Select</option>
                                     <option value="1">Yes</option>
@@ -159,7 +159,7 @@ const HeartDiseaseForm = () => {
                                     name="restecg"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 >
                                     <option value="">Select</option>
                                     <option value="0">Normal</option>
@@ -175,7 +175,7 @@ const HeartDiseaseForm = () => {
                                     name="thalach"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 />
                             </div>
 
@@ -185,7 +185,7 @@ const HeartDiseaseForm = () => {
                                     name="exang"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 >
                                     <option value="">Select</option>
                                     <option value="1">Yes</option>
@@ -201,7 +201,7 @@ const HeartDiseaseForm = () => {
                                     name="oldpeak"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 />
                             </div>
                         </div>
@@ -217,7 +217,7 @@ const HeartDiseaseForm = () => {
                                     name="slope"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 >
                                     <option value="">Select</option>
                                     <option value="0">Upsloping</option>
@@ -235,7 +235,7 @@ const HeartDiseaseForm = () => {
                                     name="ca"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 />
                             </div>
 
@@ -245,7 +245,7 @@ const HeartDiseaseForm = () => {
                                     name="thal"
                                     required
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                                 >
                                     <option value="">Select</option>
                                     <option value="1">Normal</option>
@@ -259,7 +259,7 @@ const HeartDiseaseForm = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                        className="w-full py-3 bg-green-600 text-white font-semibold rounded hover:bg-green-700 transition"
                     >
                         {loading ? "Predicting..." : "Predict Risk"}
                     </button>
@@ -271,14 +271,14 @@ const HeartDiseaseForm = () => {
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 text-center animate-fade-in">
                         <h3
-                            className={`text-2xl font-bold mb-4 ${isHighRisk ? "text-red-600" : "text-green-600"
+                            className={`text-2xl font-bold mb-4 ${isHighRisk ? "text-green-600" : "text-green-600"
                                 }`}
                         >
                             Prediction Result
                         </h3>
 
                         <div
-                            className={`text-lg font-semibold mb-6 ${isHighRisk ? "text-red-700" : "text-green-700"
+                            className={`text-lg font-semibold mb-6 ${isHighRisk ? "text-green-700" : "text-green-700"
                                 }`}
                         >
                             {isHighRisk

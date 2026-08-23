@@ -110,12 +110,12 @@ export default function AssessmentDetail() {
       <div ref={printRef} className="print:shadow-none">
         {/* Report Header */}
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <div className="bg-gradient-to-r from-red-600 to-red-700 px-6 py-5 text-white">
+          <div className="bg-gradient-to-r from-green-600 to-green-700 px-6 py-5 text-white">
             <div className="flex items-center gap-3">
               <Activity className="w-8 h-8" />
               <div>
                 <h2 className="text-xl font-bold">Heart Disease Risk Assessment Report</h2>
-                <p className="text-red-100 text-sm">Assessment #{assessment.id}</p>
+                <p className="text-green-100 text-sm">Assessment #{assessment.id}</p>
               </div>
             </div>
           </div>
@@ -155,18 +155,16 @@ export default function AssessmentDetail() {
 
             {/* Risk Result */}
             <div
-              className={`rounded-xl p-6 mb-6 ${
-                isHighRisk ? 'bg-red-50 border border-red-200' : 'bg-green-50 border border-green-200'
-              }`}
+              className={`rounded-xl p-6 mb-6 ${isHighRisk ? 'bg-green-50 border border-green-200' : 'bg-green-50 border border-green-200'
+                }`}
             >
               <div className="flex items-center gap-4">
                 <div
-                  className={`w-14 h-14 rounded-full flex items-center justify-center ${
-                    isHighRisk ? 'bg-red-100' : 'bg-green-100'
-                  }`}
+                  className={`w-14 h-14 rounded-full flex items-center justify-center ${isHighRisk ? 'bg-green-100' : 'bg-green-100'
+                    }`}
                 >
                   {isHighRisk ? (
-                    <AlertTriangle className="w-7 h-7 text-red-600" />
+                    <AlertTriangle className="w-7 h-7 text-green-600" />
                   ) : (
                     <CheckCircle2 className="w-7 h-7 text-green-600" />
                   )}
@@ -174,9 +172,8 @@ export default function AssessmentDetail() {
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wide">Risk Assessment</p>
                   <p
-                    className={`text-2xl font-bold ${
-                      isHighRisk ? 'text-red-700' : 'text-green-700'
-                    }`}
+                    className={`text-2xl font-bold ${isHighRisk ? 'text-green-700' : 'text-green-700'
+                      }`}
                   >
                     {assessment.risk_label}
                   </p>

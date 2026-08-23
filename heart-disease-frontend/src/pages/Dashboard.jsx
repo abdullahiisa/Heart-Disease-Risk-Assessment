@@ -85,13 +85,13 @@ export default function Dashboard() {
               <div>
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-gray-600">High Risk</span>
-                  <span className="font-medium text-red-600">
+                  <span className="font-medium text-green-600">
                     {stats.high_risk_count} ({Math.round((stats.high_risk_count / stats.total_assessments) * 100)}%)
                   </span>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-3">
                   <div
-                    className="bg-red-500 h-3 rounded-full transition-all duration-500"
+                    className="bg-green-500 h-3 rounded-full transition-all duration-500"
                     style={{ width: `${(stats.high_risk_count / stats.total_assessments) * 100}%` }}
                   />
                 </div>
@@ -122,13 +122,13 @@ export default function Dashboard() {
           <div className="space-y-3">
             <Link
               to="/assessment/new"
-              className="flex items-center justify-between p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors group"
+              className="flex items-center justify-between p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors group"
             >
               <div className="flex items-center gap-3">
-                <Activity className="w-5 h-5 text-red-600" />
-                <span className="text-sm font-medium text-red-700">New Assessment</span>
+                <Activity className="w-5 h-5 text-green-600" />
+                <span className="text-sm font-medium text-green-700">New Assessment</span>
               </div>
-              <ArrowRight className="w-4 h-4 text-red-400 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-green-400 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/patients"
@@ -158,7 +158,7 @@ export default function Dashboard() {
       <div className="bg-white rounded-xl border border-gray-200">
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
           <h2 className="text-lg font-semibold text-gray-900">Recent Assessments</h2>
-          <Link to="/assessments" className="text-sm text-red-600 hover:text-red-700 font-medium">
+          <Link to="/assessments" className="text-sm text-green-600 hover:text-green-700 font-medium">
             View All →
           </Link>
         </div>
@@ -189,11 +189,10 @@ export default function Dashboard() {
                     <td className="px-6 py-4 text-sm text-gray-600">{a.age || '—'}</td>
                     <td className="px-6 py-4">
                       <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          a.result === 1
-                            ? 'bg-red-100 text-red-800'
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${a.result === 1
+                            ? 'bg-green-100 text-green-800'
                             : 'bg-green-100 text-green-800'
-                        }`}
+                          }`}
                       >
                         {a.risk_label}
                       </span>
@@ -204,7 +203,7 @@ export default function Dashboard() {
                     <td className="px-6 py-4">
                       <Link
                         to={`/assessments/${a.id}`}
-                        className="text-sm text-red-600 hover:text-red-700 font-medium"
+                        className="text-sm text-green-600 hover:text-green-700 font-medium"
                       >
                         View
                       </Link>
@@ -221,7 +220,7 @@ export default function Dashboard() {
             action={
               <Link
                 to="/assessment/new"
-                className="px-4 py-2 bg-red-600 text-white text-sm rounded-lg hover:bg-red-700"
+                className="px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700"
               >
                 New Assessment
               </Link>

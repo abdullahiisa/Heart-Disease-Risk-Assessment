@@ -3,7 +3,7 @@ import { Loader2, AlertCircle, Inbox } from 'lucide-react';
 export function LoadingState({ message = 'Loading...' }) {
   return (
     <div className="flex flex-col items-center justify-center py-16">
-      <Loader2 className="w-8 h-8 text-red-500 animate-spin" />
+      <Loader2 className="w-8 h-8 text-green-500 animate-spin" />
       <p className="mt-3 text-sm text-gray-500">{message}</p>
     </div>
   );
@@ -12,14 +12,14 @@ export function LoadingState({ message = 'Loading...' }) {
 export function ErrorState({ message = 'Something went wrong.', onRetry }) {
   return (
     <div className="flex flex-col items-center justify-center py-16">
-      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-3">
-        <AlertCircle className="w-6 h-6 text-red-600" />
+      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-3">
+        <AlertCircle className="w-6 h-6 text-green-600" />
       </div>
       <p className="text-sm font-medium text-gray-900">{message}</p>
       {onRetry && (
         <button
           onClick={onRetry}
-          className="mt-3 px-4 py-2 text-sm bg-red-600 text-white rounded-lg hover:bg-red-700"
+          className="mt-3 px-4 py-2 text-sm bg-green-600 text-white rounded-lg hover:bg-green-700"
         >
           Try Again
         </button>
